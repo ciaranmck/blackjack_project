@@ -1,5 +1,7 @@
 package game;
 import enums.*;
+import java.util.Collections;
+import java.util.ArrayList;
 
 
 public class Deck {
@@ -11,11 +13,18 @@ public class Deck {
     setupDeck();
   }
 
-  public void setupDeck(){
+  public void setupDeck() {
     for (Suit suit : Suit.values()) {
      for (Rank rank : Rank.values()) {
-      Card card = new Card(rank, suit)
+      Card card = new Card(rank, suit);
       deck.add(card);
+      Collections.shuffle(deck);
+      }
     }
   }
+
+  public int cardCount() {
+    return this.deck.size();
+  }
+
 }
