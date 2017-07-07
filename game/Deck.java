@@ -4,20 +4,18 @@ import enums.*;
 
 public class Deck {
 
-  private Rank rank;
-  private Suit suit;
+  private ArrayList<Card> deck;
 
-  public Deck(Rank rank, Suit suit) {
-    this.rank = rank;
-    this.suit = suit;
+  public Deck() {
+    this.deck = new ArrayList<Card>();
+    setupDeck();
   }
 
-  public Rank getRank(){
-    return this.rank;
+  public void setupDeck(){
+    for (Suit suit : Suit.values()) {
+     for (Rank rank : Rank.values()) {
+      Card card = new Card(rank, suit)
+      deck.add(card);
+    }
   }
-
-  public Suit getSuit(){
-    return this.suit;
-  }
-
 }
