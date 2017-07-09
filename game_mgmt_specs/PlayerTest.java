@@ -10,21 +10,22 @@ public class PlayerTest {
 
   @Before
   public void before() {
-    player = new Player("Ciaran");
+    player = new Player();
   }
 
   @Test
-  public void hasName() {
+  public void testSetName() {
+    player.setName("Ciaran");
     assertEquals("Ciaran", player.getName());
   }
 
   @Test
-  public void cardCount() {
+  public void testCardCount() {
     assertEquals(0, player.cardCount());
   }
 
   @Test
-  public void hasHand() {
+  public void testHasHand() {
     player.takeCard();
     assertEquals(1, player.cardCount());
   }

@@ -14,17 +14,15 @@ public class BlackjackTest {
   }
 
   @Test
-  public void dealerAndPlayerHaveCards() {
-    // Dealer dealer = new Dealer();
-    // Player player = new Player("Ciaran");
+  public void testDealerAndPlayerHaveCards() {
     blackjack.dealCards();
     assertEquals(2, blackjack.dealerCardCount()); 
     assertEquals(2, blackjack.playerCardCount());
   }
 
-  // @Test
-  // public void dealCards() {
-  //   assertEquals(1, blackjack.dealCards());
-  // }
+  @Test
+  public void testCardValues() {
+
+  }
 
 }

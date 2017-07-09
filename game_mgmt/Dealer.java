@@ -22,4 +22,9 @@ public class Dealer {
     hand.add(card);
   }
 
+  public Rank readCard() {
+    Card card = hand.get(0);
+    return card.getRank();
+    }
+
 }

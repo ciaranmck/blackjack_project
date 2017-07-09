@@ -13,12 +13,12 @@ public class CardTest {
   }
 
   @Test
-  public void hasRank() {
+  public void testHasRank() {
     assertEquals(Rank.KING, card.getRank());
   }
 
   @Test
-  public void hasSuit() {
+  public void testHasSuit() {
     assertEquals(Suit.CLUBS, card.getSuit());
   }
 

@@ -17,12 +17,12 @@ public class DealerTest {
   }
 
   @Test
-  public void cardCount() {
+  public void testCardCount() {
     assertEquals(0, dealer.cardCount());
   }
 
   @Test
-  public void hasHand() {
+  public void testHasHand() {
     dealer.takeCard();
     assertEquals(1, dealer.cardCount());
   }

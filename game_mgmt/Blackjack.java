@@ -11,7 +11,7 @@ public class Blackjack {
   private Deck deck;
 
   public Blackjack() {
-    player = new Player("Ciaran");
+    player = new Player();
     dealer = new Dealer();
     deck = new Deck();
   }
@@ -28,7 +28,7 @@ public class Blackjack {
   }
 
   public int playerCardCount() {
-    return dealer.cardCount();
+    return player.cardCount();
   }
 
 }

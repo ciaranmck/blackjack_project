@@ -9,13 +9,17 @@ public class Player {
   private String name;
   private ArrayList<Card> hand;
 
-  public Player(String name) {
+  public Player() {
     this.name = name; 
     this.hand = new ArrayList<Card>();
   }
 
   public String getName() {
     return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public int cardCount() {
@@ -27,5 +31,12 @@ public class Player {
     Card card = deck.getCard();
     hand.add(card);
   }
+
+  // player must be able to read two cards to dealers one card, public Rank may need to be changed to public int once Ranks have value.
+
+  public Rank readCard() {
+      Card card = hand.get(0);
+      return card.getRank();
+      }
 
 }

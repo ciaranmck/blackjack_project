@@ -14,7 +14,7 @@ public class DeckTest {
   }
 
   @Test
-  public void hasDeck() {
+  public void testHasDeck() {
     assertEquals(52, deck.cardCount());
   }
 
