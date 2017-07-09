@@ -27,4 +27,8 @@ public class Deck {
     return this.deck.size();
   }
 
+  public Card getCard() {
+    return this.deck.remove(0);
+  }
+
 }
