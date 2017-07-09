@@ -1,4 +1,4 @@
-package game;
+package game_mgmt;
 import enums.*;
 import java.util.Collections;
 import java.util.ArrayList;

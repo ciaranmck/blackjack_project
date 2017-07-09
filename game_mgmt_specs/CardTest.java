@@ -1,6 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.*;
-import game.*;
+import game_mgmt.*;
 import enums.*;
 
 public class CardTest {

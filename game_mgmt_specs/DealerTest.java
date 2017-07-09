@@ -1,6 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.*;
-import game.*;
+import game_mgmt.*;
 import enums.*;
 import java.util.ArrayList;
 
@@ -17,9 +17,14 @@ public class DealerTest {
   }
 
   @Test
+  public void cardCount() {
+    assertEquals(0, dealer.cardCount());
+  }
+
+  @Test
   public void hasHand() {
-    dealer.dealCard();
-    assertEquals(1, dealer.getHand());
+    dealer.takeCard();
+    assertEquals(1, dealer.cardCount());
   }
 
  
