@@ -12,7 +12,6 @@ public class BlackjackTest {
   @Before
   public void before() {
     blackjack = new Blackjack();
-    deck = new Deck();
   }
 
   @Test
@@ -24,7 +23,7 @@ public class BlackjackTest {
   }
 
   @Test
-  public void testCardValues() {
+  public void testHasCardValue() {
 
   }
 
