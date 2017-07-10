@@ -25,6 +25,13 @@ public class DealerTest {
     assertEquals(1, dealer.cardCount());
   }
 
+  @Test
+  public void testCardHasValue() {
+    Deck deck = new Deck();
+    dealer.takeCard(deck);
+    assertEquals(2, dealer.readCard());
+  }
+
  
 
 }

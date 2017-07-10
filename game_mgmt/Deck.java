@@ -16,8 +16,10 @@ public class Deck extends BlackjackRule {
   public void setupDeck() {
     for (Suit suit : Suit.values()) {
      for (Rank rank : Rank.values()) {
+      // Would like to have these lines elsewhere so blackjack values are not hard coded into the deck
       Integer minValue = getMinCardValue(rank);
-      // Integer maxValue = BlackjackRule.getMaxCardValue(rank, suit);
+      Integer maxValue = getMaxCardValue(rank);
+      // ------------------------------------------------------
       Card card = new Card(rank, suit);
       deck.add(card);
       Collections.shuffle(deck);

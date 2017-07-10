@@ -19,7 +19,7 @@ public class BlackjackTest {
     blackjack.dealCards();
     assertEquals(2, blackjack.dealerCardCount()); 
     assertEquals(2, blackjack.playerCardCount());
-    assertEquals(48, blackjack.cardCount());
+    assertEquals(48, blackjack.deckCardCount());
   }
 
   @Test

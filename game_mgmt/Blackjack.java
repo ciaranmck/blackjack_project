@@ -31,7 +31,7 @@ public class Blackjack {
     return player.cardCount();
   }
 
-  public int cardCount() {
+  public int deckCardCount() {
     return deck.cardCount();
   }
 
