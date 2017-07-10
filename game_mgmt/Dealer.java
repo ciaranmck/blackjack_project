@@ -13,6 +13,10 @@ public class Dealer {
     this.hand = new ArrayList<Card>();
   }
 
+  public ArrayList<Card> getHand() {
+    return new ArrayList<Card>(hand);
+  }
+
   public int cardCount() {
     return this.hand.size();
   }

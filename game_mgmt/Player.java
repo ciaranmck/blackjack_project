@@ -10,7 +10,6 @@ public class Player {
   private ArrayList<Card> hand;
 
   public Player() {
-    this.name = name; 
     this.hand = new ArrayList<Card>();
   }
 
@@ -20,6 +19,10 @@ public class Player {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public ArrayList<Card> getHand() {
+    return new ArrayList<Card>(hand);
   }
 
   public int cardCount() {

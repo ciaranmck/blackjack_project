@@ -13,7 +13,10 @@ public class BlackjackTest {
 
   @Before
   public void before() {
-    blackjack = new Blackjack();
+    Player player = new Player();
+    player.setName("Ciaran");
+
+    blackjack = new Blackjack(player);
     card_01 = new Card(Rank.KING, Suit.CLUBS);
     card_02 = new Card(Rank.TWO, Suit.HEARTS);
   }
@@ -27,15 +30,21 @@ public class BlackjackTest {
   }
 
   @Test
-  public void testPlayerCardHasValue() {
-    blackjack.dealCards();
-    assertEquals(2, blackjack.checkPlayerCardValues());
-  }
+  public void testDealerAndPlayerCardsHaveValue() {
+   blackjack.dealCards();
+   ArrayList<Card> playerHand = blackjack.playerGetHand();
+   ArrayList<Card> dealerHand = blackjack.dealerGetHand();
+    int dealerResult = blackjack.getCardValues(dealerHand);
+    int playerResult = blackjack.getCardValues(playerHand);
+   assertEquals(4, dealerResult);
+   assertEquals(6, playerResult);
+ }
+  
 
   @Test
-  public void testDealerCardHasValue() {
-    blackjack.dealCards();
-    assertEquals(1, blackjack.checkDealerCardValues());
+  public void testCanCompareHands() {
+   blackjack.dealCards();
+   assertEquals("Ciaran Wins", blackjack.compareHands());
   }
 
   // @Test
@@ -47,10 +56,6 @@ public class BlackjackTest {
 
 
   
-  // @Test
-  // public void testCanCompareHands() {
-  //   blackjack.dealCards();
-  //   assertEquals
-  // }
+  
 
 }

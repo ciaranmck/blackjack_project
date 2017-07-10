@@ -12,6 +12,11 @@ public class Card {
     this.suit = suit;
   }
 
+  @Override
+  public String toString() {
+    return this.rank.toString() + " Of " + this.suit.toString();
+  }
+
   public Rank getRank() {
     return this.rank;
   }

@@ -12,8 +12,8 @@ public class Blackjack {
   private Deck deck;
   private HashMap<Enum, Integer> cardRules;
 
-  public Blackjack() {
-    player = new Player();
+  public Blackjack(Player player) {
+    this.player = player;
     dealer = new Dealer();
     deck = new Deck();
     cardRules = new HashMap<Enum, Integer>();
@@ -56,25 +56,37 @@ public class Blackjack {
     return deck.cardCount();
   }
 
-  public int checkPlayerCardValues() {
-    return cardRules.get(player.readCard());
+  public ArrayList<Card> playerGetHand() {
+    return player.getHand();
   }
 
-  public int checkDealerCardValues() {
-    return cardRules.get(dealer.readCard());
+  public ArrayList<Card> dealerGetHand() {
+    return dealer.getHand();
   }
 
-  // public int checkCardValues(Card card) {
-  //   return cardRules.get(card.getRank());
-  // }
+  public int getCardValues(ArrayList<Card> hand) {
+    int valueOfCards = 0;
 
-  public int addCardValues(int card_01, int card_02) {
-    return card_01 + card_02;
+        for (Card card : hand) {
+          valueOfCards += cardRules.get(card.getRank());
+        }
+
+        return valueOfCards;
   }
 
-  // public int compareHands() {
+  public String compareHands() {
 
-  // }
+    ArrayList<Card> dealerHands = this.dealer.getHand();
+    
+    ArrayList<Card> playerHands = this.player.getHand();
+
+    if (getCardValues(playerHands) <= getCardValues(dealerHands)){
+      return "House Wins";
+    }
+    else {
+      return player.getName() + " Wins";
+    }
+  }
 
 
 

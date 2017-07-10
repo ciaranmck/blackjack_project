@@ -18,7 +18,6 @@ public class Deck {
      for (Rank rank : Rank.values()) {
       Card card = new Card(rank, suit);
       deck.add(card);
-      // Collections.shuffle(deck);
       }
     }
   }
