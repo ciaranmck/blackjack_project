@@ -6,13 +6,10 @@ import java.util.ArrayList;
 
 public class DealerTest {
 
-  Deck deck;
   Dealer dealer;
-
 
   @Before
   public void before() {
-    // deck = new Deck();
     dealer = new Dealer();
   }
 

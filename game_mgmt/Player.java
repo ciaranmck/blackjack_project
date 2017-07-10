@@ -26,8 +26,7 @@ public class Player {
     return this.hand.size();
   }
 
-  public void takeCard() {
-    Deck deck = new Deck();
+  public void takeCard(Deck deck) {
     Card card = deck.getCard();
     hand.add(card);
   }

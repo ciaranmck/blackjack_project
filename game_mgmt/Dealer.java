@@ -8,6 +8,7 @@ public class Dealer {
 
   private ArrayList<Card> hand;
 
+
   public Dealer() {
     this.hand = new ArrayList<Card>();
   }
@@ -16,8 +17,7 @@ public class Dealer {
     return this.hand.size();
   }
 
-  public void takeCard() {
-    Deck deck = new Deck();
+  public void takeCard(Deck deck) {
     Card card = deck.getCard();
     hand.add(card);
   }

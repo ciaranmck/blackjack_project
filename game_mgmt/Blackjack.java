@@ -18,8 +18,8 @@ public class Blackjack {
 
   public void dealCards() {
     for (int i=0; i<2; i++) {
-      dealer.takeCard();
-      player.takeCard();
+      dealer.takeCard(deck);
+      player.takeCard(deck);
     }
   }
 
@@ -29,6 +29,10 @@ public class Blackjack {
 
   public int playerCardCount() {
     return player.cardCount();
+  }
+
+  public int cardCount() {
+    return deck.cardCount();
   }
 
 }
