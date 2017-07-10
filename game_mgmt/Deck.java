@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 
-public class Deck extends BlackjackRule {
+public class Deck {
 
   private ArrayList<Card> deck;
 
@@ -16,15 +16,15 @@ public class Deck extends BlackjackRule {
   public void setupDeck() {
     for (Suit suit : Suit.values()) {
      for (Rank rank : Rank.values()) {
-      // Would like to have these lines elsewhere so blackjack values are not hard coded into the deck
-      Integer minValue = getMinCardValue(rank);
-      Integer maxValue = getMaxCardValue(rank);
-      // ------------------------------------------------------
       Card card = new Card(rank, suit);
       deck.add(card);
-      Collections.shuffle(deck);
+      // Collections.shuffle(deck);
       }
     }
+  }
+
+  public void shuffleDeck() {
+    Collections.shuffle(deck);
   }
 
   public int cardCount() {

@@ -31,11 +31,4 @@ public class PlayerTest {
     assertEquals(1, player.cardCount());
   }
 
-  @Test
-  public void testCardHasValue() {
-    Deck deck = new Deck();
-    player.takeCard(deck);
-    assertEquals(2, player.readCard());
-  }
-
 }

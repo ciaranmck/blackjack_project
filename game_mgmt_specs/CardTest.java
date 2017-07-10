@@ -22,6 +22,10 @@ public class CardTest {
     assertEquals(Suit.CLUBS, card.getSuit());
   }
 
+  // @Test void testToString() {
+  //   assertEquals()
+  // }
+
 
 
 }
