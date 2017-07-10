@@ -26,7 +26,8 @@ public class PlayerTest {
 
   @Test
   public void testHasHand() {
-    player.takeCard();
+    Deck deck = new Deck();
+    player.takeCard(deck);
     assertEquals(1, player.cardCount());
   }
 

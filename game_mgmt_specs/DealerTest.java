@@ -20,7 +20,8 @@ public class DealerTest {
 
   @Test
   public void testHasHand() {
-    dealer.takeCard();
+    Deck deck = new Deck();
+    dealer.takeCard(deck);
     assertEquals(1, dealer.cardCount());
   }
 
