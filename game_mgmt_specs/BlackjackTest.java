@@ -64,6 +64,11 @@ public class BlackjackTest {
   }
 
   @Test
+  public void testPlayerCanGoBust() {
+    assertEquals("Ciaran has gone bust!!", blackjack.playerTwistOrStick(22));
+  }
+
+  @Test
   public void testPlayerCanStick() {
     blackjack.dealCards();
 
@@ -74,13 +79,6 @@ public class BlackjackTest {
     assertEquals("Ciaran, you have 6, what do you want to do?", blackjack.playerTwistOrStick(playerResult));
   }
 
-
-  // @Test
-  // public void testCanAddCardValues() {
-  //   int value_01 = blackjack.checkCardValues(card_01);
-  //   int value_02 = blackjack.checkCardValues(card_02);
-  //   assertEquals(12, blackjack.addCardValues(value_01, value_02));
-  // }
 
 
   

@@ -101,13 +101,20 @@ public class Blackjack {
     }
   }
 
+  public void playerInputTwistOrStick(int handValue) {
+    if (handValue < 21) {
+      System.out.println("What do you want to do? Twist or Stick? ");
+      String action = scanner.next();
+    }
+    else {
+      System.out.println(player.getName() + " has gone bust!!");
+    }
+  }
+
   public void playerTwist(int handValue) {
     if (handValue < 21) {
       this.player.takeCard(deck);
     } 
-    else {
-      System.out.print(player.getName() + " has gone bust!! The house wins!!!");
-    }
   }
 
 
