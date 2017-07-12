@@ -11,11 +11,13 @@ public class Blackjack {
   private Player player;
   private Dealer dealer;
   private Deck deck;
+  // private Log log;
   private HashMap<Enum, Integer> cardRules;
   Scanner scanner;
 
   public Blackjack(Player player) {
     this.player = player;
+    // log = new Log();
     dealer = new Dealer();
     deck = new Deck();
     cardRules = new HashMap<Enum, Integer>();
@@ -117,11 +119,18 @@ public class Blackjack {
     } 
   }
 
-  public void playGame() {
-    player.setName("Ciaran");
+  public String declareWinner() {
+    String result = compareHands();
+    return result;
+  }
+
+  public void playGame(String name) {
+    player.setName(name);
     shuffleDeck();
     dealCards();
     compareHands();
+    declareWinner();
+    // log.print();
   }
 
 

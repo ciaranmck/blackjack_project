@@ -1,5 +1,5 @@
-import game_mgmt.*;
 import enums.*;
+import game_mgmt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,13 +15,11 @@ public class Runner {
     String name = System.console().readLine();
     System.out.println();
 
-    Card card = new Card(rank, suit);
     Deck deck = new Deck();
     Player player = new Player();
     Dealer dealer = new Dealer();
     Blackjack blackjack = new Blackjack(player);
 
-    player.setName(name);
-    blackjack.playGame();
+    blackjack.playGame(name);
   }
 }
