@@ -3,6 +3,7 @@ import enums.*;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 public class Blackjack {
@@ -11,12 +12,14 @@ public class Blackjack {
   private Dealer dealer;
   private Deck deck;
   private HashMap<Enum, Integer> cardRules;
+  Scanner scanner;
 
   public Blackjack(Player player) {
     this.player = player;
     dealer = new Dealer();
     deck = new Deck();
     cardRules = new HashMap<Enum, Integer>();
+    scanner = new Scanner(System.in);
       
     cardRules.put(Rank.ACE, 1);
     cardRules.put(Rank.TWO, 2);
@@ -89,12 +92,21 @@ public class Blackjack {
 
   }
 
+  public String playerTwistOrStick(int handValue) {
+    if (handValue < 21) {
+      return player.getName() + ", you have " + handValue + ", what do you want to do?";
+    }
+    else {
+      return player.getName() + " has gone bust!!";
+    }
+  }
+
   public void playerTwist(int handValue) {
     if (handValue < 21) {
       this.player.takeCard(deck);
     } 
     else {
-      System.out.print(player.getName() + " has gone bust!!");
+      System.out.print(player.getName() + " has gone bust!! The house wins!!!");
     }
   }
 

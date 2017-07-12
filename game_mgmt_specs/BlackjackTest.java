@@ -63,6 +63,17 @@ public class BlackjackTest {
     assertEquals(11, newPlayerResult);
   }
 
+  @Test
+  public void testPlayerCanStick() {
+    blackjack.dealCards();
+
+    ArrayList<Card> playerHand = blackjack.playerGetHand();
+    int playerResult = blackjack.getCardValues(playerHand);
+
+    
+    assertEquals("Ciaran, you have 6, what do you want to do?", blackjack.playerTwistOrStick(playerResult));
+  }
+
 
   // @Test
   // public void testCanAddCardValues() {
