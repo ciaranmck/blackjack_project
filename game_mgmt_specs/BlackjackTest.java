@@ -50,9 +50,19 @@ public class BlackjackTest {
   @Test
   public void testPlayerCanTwist() {
     blackjack.dealCards();
-    blackjack.playerTwist(22);
+
+    ArrayList<Card> playerHand = blackjack.playerGetHand();
+    int playerResult = blackjack.getCardValues(playerHand);
+    blackjack.playerTwist(playerResult);
+
+    ArrayList<Card> newPlayerHand = blackjack.playerGetHand();
+    int newPlayerResult = blackjack.getCardValues(newPlayerHand);
+
     assertEquals(47, blackjack.deckCardCount());
+    assertEquals(3, blackjack.playerCardCount());
+    assertEquals(11, newPlayerResult);
   }
+
 
   // @Test
   // public void testCanAddCardValues() {
