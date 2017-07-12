@@ -8,6 +8,7 @@ public class Player {
 
   private String name;
   private ArrayList<Card> hand;
+  private Card card;
 
   public Player() {
     this.hand = new ArrayList<Card>();

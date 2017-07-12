@@ -117,15 +117,16 @@ public class Blackjack {
   // }
 
   public void twistOrStick(int handValue) {
-    if (handValue < 21) {
-      System.out.println("What do you want to do? Hit or Stick? ");
-      String action = scanner.next();
-      if (action == "hit") {
-        this.player.takeCard(deck);
-      }
-    }
-    else {
-      System.out.println(player.getName() + " has gone bust!!");
+    while (handValue < 21) {
+      System.out.println("What do you want to do? Twist or Stick? ");
+      String action = System.console().readLine();
+
+        if (action.equals("twist")) {
+          this.player.takeCard(deck);
+        } 
+        else {
+          System.out.println(player.getName() + " has gone bust!!");
+        }
     }
   }
 
@@ -149,12 +150,16 @@ public class Blackjack {
     int playerResult = getCardValues(playerHand);
     int dealerResult = getCardValues(dealerHand);
 
+    System.out.println(playerHand);
     System.out.println("You have " + playerResult + " \n");
+    System.out.println(dealerHand);
     System.out.println("Dealer has " + dealerResult + " \n");
 
     twistOrStick(playerResult);
 
+    System.out.println(playerHand);
     System.out.println("You have " + playerResult + " \n");
+    System.out.println(dealerHand);
     System.out.println("Dealer has " + dealerResult + " \n");
 
     compareHands();

@@ -19,7 +19,7 @@ public class Log {
     }
   }
 
-  public void print(String message) {
-    System.out.println(message);
-  }
+  // public void print(String message) {
+  //   System.out.println(message);
+  // }
 }
