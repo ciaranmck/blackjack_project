@@ -76,19 +76,27 @@ public class Blackjack {
 
   public String compareHands() {
 
-    ArrayList<Card> dealerHands = this.dealer.getHand();
+    ArrayList<Card> dealerHand = this.dealer.getHand();
     
-    ArrayList<Card> playerHands = this.player.getHand();
+    ArrayList<Card> playerHand = this.player.getHand();
 
-    if (getCardValues(playerHands) <= getCardValues(dealerHands)){
+    if (getCardValues(playerHand) <= getCardValues(dealerHand)){
       return "House Wins";
     }
     else {
       return player.getName() + " Wins";
     }
+
   }
 
-
+  public void playerTwist(int handValue) {
+    if (handValue < 21) {
+      this.player.takeCard(deck);
+    } 
+    else {
+      System.out.print(player.getName() + " has gone bust!!");
+    }
+  }
 
 
 }

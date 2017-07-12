@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class BlackjackTest {
 
   Blackjack blackjack;
-  Deck deck;
-  Card card_01;
-  Card card_02;
+  // Deck deck;
+  // Card card_01;
+  // Card card_02;
 
   @Before
   public void before() {
@@ -17,8 +17,8 @@ public class BlackjackTest {
     player.setName("Ciaran");
 
     blackjack = new Blackjack(player);
-    card_01 = new Card(Rank.KING, Suit.CLUBS);
-    card_02 = new Card(Rank.TWO, Suit.HEARTS);
+    // card_01 = new Card(Rank.KING, Suit.CLUBS);
+    // card_02 = new Card(Rank.TWO, Suit.HEARTS);
   }
 
   @Test
@@ -45,6 +45,13 @@ public class BlackjackTest {
   public void testCanCompareHands() {
    blackjack.dealCards();
    assertEquals("Ciaran Wins", blackjack.compareHands());
+  }
+
+  @Test
+  public void testPlayerCanTwist() {
+    blackjack.dealCards();
+    blackjack.playerTwist(22);
+    assertEquals(47, blackjack.deckCardCount());
   }
 
   // @Test
