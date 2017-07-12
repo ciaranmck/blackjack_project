@@ -94,7 +94,7 @@ public class Blackjack {
 
   public String playerTwistOrStick(int handValue) {
     if (handValue < 21) {
-      return player.getName() + ", you have " + handValue + ", what do you want to do?";
+      return player.getName() + ", you have " + handValue + ", do you want to Stick or Twist?";
     }
     else {
       return player.getName() + " has gone bust!!";
@@ -115,6 +115,13 @@ public class Blackjack {
     if (handValue < 21) {
       this.player.takeCard(deck);
     } 
+  }
+
+  public void playGame() {
+    player.setName("Ciaran");
+    shuffleDeck();
+    dealCards();
+    compareHands();
   }
 
 

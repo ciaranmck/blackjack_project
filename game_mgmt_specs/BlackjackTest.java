@@ -70,15 +70,13 @@ public class BlackjackTest {
 
   @Test
   public void testPlayerCanStick() {
-    blackjack.dealCards();
-
-    ArrayList<Card> playerHand = blackjack.playerGetHand();
-    int playerResult = blackjack.getCardValues(playerHand);
-
-    
-    assertEquals("Ciaran, you have 6, what do you want to do?", blackjack.playerTwistOrStick(playerResult));
+    assertEquals("Ciaran, you have 6, do you want to Stick or Twist?", blackjack.playerTwistOrStick(6));
   }
 
+  // @Test
+  // public void testChoicePlayerInput() {
+  //   assertEquals("What do you want to do? Twist or Stick? ", blackjack.playerInputTwistOrStick(10));
+  // }
 
 
   
