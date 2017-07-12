@@ -99,29 +99,30 @@ public class Blackjack {
     ArrayList<Card> playerHand = this.player.getHand();
 
     if (getCardValues(playerHand) <= getCardValues(dealerHand)){
-      // System.out.println("House Wins");
       log.add("House Wins");
     }
     else {
-      // System.out.println(player.getName() + " Wins");
       log.add(player.getName() + " Wins!!!");
     }
 
   }
 
-  public String playerTwistOrStick(int handValue) {
-    if (handValue < 21) {
-      return player.getName() + ", you have " + handValue + ", do you want to Stick or Twist?";
-    }
-    else {
-      return player.getName() + " has gone bust!!";
-    }
-  }
+  // public String playerTwistOrStick(int handValue) {
+  //   if (handValue < 21) {
+  //     return player.getName() + ", you have " + handValue + ", do you want to Stick or Twist?";
+  //   }
+  //   else {
+  //     return player.getName() + " has gone bust!!";
+  //   }
+  // }
 
-  public void playerInputTwistOrStick(int handValue) {
+  public void twistOrStick(int handValue) {
     if (handValue < 21) {
-      System.out.println("What do you want to do? Twist or Stick? ");
+      System.out.println("What do you want to do? Hit or Stick? ");
       String action = scanner.next();
+      if (action == "hit") {
+        this.player.takeCard(deck);
+      }
     }
     else {
       System.out.println(player.getName() + " has gone bust!!");
@@ -134,17 +135,29 @@ public class Blackjack {
     } 
   }
 
-  // public String declareWinner() {
-  //   String result = compareHands();
-  //   return result;
-  // }
-
   public void playGame(String name) {
+    System.out.println("Welcome to Blackjack 1.0! \n");
+
     player.setName(name);
+   
     shuffleDeck();
     dealCards();
+
+    ArrayList<Card> playerHand = playerGetHand();
+    ArrayList<Card> dealerHand = dealerGetHand();
+
+    int playerResult = getCardValues(playerHand);
+    int dealerResult = getCardValues(dealerHand);
+
+    System.out.println("You have " + playerResult + " \n");
+    System.out.println("Dealer has " + dealerResult + " \n");
+
+    twistOrStick(playerResult);
+
+    System.out.println("You have " + playerResult + " \n");
+    System.out.println("Dealer has " + dealerResult + " \n");
+
     compareHands();
-    // declareWinner();
     log.print();
   }
 
