@@ -41,11 +41,11 @@ public class BlackjackTest {
  }
   
 
-  @Test
-  public void testCanCompareHands() {
-   blackjack.dealCards();
-   assertEquals("Ciaran Wins", blackjack.compareHands());
-  }
+  // @Test
+  // public void testCanCompareHands() {
+  //  blackjack.dealCards();
+  //  assertEquals("Ciaran Wins", blackjack.compareHands());
+  // }
 
   @Test
   public void testPlayerCanTwist() {

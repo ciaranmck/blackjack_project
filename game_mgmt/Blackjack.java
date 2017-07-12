@@ -11,13 +11,13 @@ public class Blackjack {
   private Player player;
   private Dealer dealer;
   private Deck deck;
-  // private Log log;
+  private Log log;
   private HashMap<Enum, Integer> cardRules;
   Scanner scanner;
 
   public Blackjack(Player player) {
     this.player = player;
-    // log = new Log();
+    log = new Log();
     dealer = new Dealer();
     deck = new Deck();
     cardRules = new HashMap<Enum, Integer>();
@@ -79,17 +79,32 @@ public class Blackjack {
         return valueOfCards;
   }
 
-  public String compareHands() {
+  // public String compareHands() {
+
+  //   ArrayList<Card> dealerHand = this.dealer.getHand();
+    
+  //   ArrayList<Card> playerHand = this.player.getHand();
+
+  //   if (getCardValues(playerHand) <= getCardValues(dealerHand)){
+  //     return "House Wins";
+  //   }
+  //   else {
+  //     return player.getName() + " Wins";
+  //   }
+
+  public void compareHands() {
 
     ArrayList<Card> dealerHand = this.dealer.getHand();
     
     ArrayList<Card> playerHand = this.player.getHand();
 
     if (getCardValues(playerHand) <= getCardValues(dealerHand)){
-      return "House Wins";
+      // System.out.println("House Wins");
+      log.add("House Wins");
     }
     else {
-      return player.getName() + " Wins";
+      // System.out.println(player.getName() + " Wins");
+      log.add(player.getName() + " Wins!!!");
     }
 
   }
@@ -119,18 +134,18 @@ public class Blackjack {
     } 
   }
 
-  public String declareWinner() {
-    String result = compareHands();
-    return result;
-  }
+  // public String declareWinner() {
+  //   String result = compareHands();
+  //   return result;
+  // }
 
   public void playGame(String name) {
     player.setName(name);
     shuffleDeck();
     dealCards();
     compareHands();
-    declareWinner();
-    // log.print();
+    // declareWinner();
+    log.print();
   }
 
 
