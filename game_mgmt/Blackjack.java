@@ -99,10 +99,10 @@ public class Blackjack {
     ArrayList<Card> playerHand = this.player.getHand();
 
     if (getCardValues(playerHand) <= getCardValues(dealerHand)){
-      log.add("House Wins");
+      System.out.println("House Wins");
     }
     else {
-      log.add(player.getName() + " Wins!!!");
+      System.out.println(player.getName() + " Wins!!!");
     }
 
   }
@@ -165,7 +165,6 @@ public class Blackjack {
     // System.out.println("Dealer has " + dealerResult + " \n");
 
     compareHands();
-    log.print();
   }
 
 
